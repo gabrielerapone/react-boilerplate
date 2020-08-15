@@ -1,16 +1,17 @@
 module.exports = {
-  stories: ["../src/**/*.stories.js"],
+  stories: ["../src/**/*.stories.tsx"],
   addons: [
     "@storybook/preset-create-react-app",
     "@storybook/addon-actions",
     "@storybook/addon-links",
+    "storybook-addon-styled-component-theme/dist/register",
   ],
   webpackFinal: async config => {
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       use: [
         {
-          loader: require.resolve("ts-loader"),
+          loader: require.resolve("awesome-typescript-loader"),
         },
         // Optional
         {
@@ -20,5 +21,15 @@ module.exports = {
     });
     config.resolve.extensions.push(".ts", ".tsx");
     return config;
+  },
+  typescript: {
+    check: false,
+    checkOptions: {},
+    reactDocgen: "react-docgen-typescript",
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: prop =>
+        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
+    },
   },
 };

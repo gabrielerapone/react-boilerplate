@@ -2,7 +2,7 @@ import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled from "styled-components";
-import { PageTransition } from "globalStyle";
+import { PageTransition } from "global_style";
 // Pages
 import Landing from "pages/landing";
 

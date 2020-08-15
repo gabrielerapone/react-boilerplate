@@ -1,18 +1,39 @@
 import React from "react";
-import styled from "styled-components";
+import { useRecoilState } from "recoil";
+// State
+import { currentTheme } from "state";
+// Components
+import Container from "components/layout/container";
+import Spacing from "components/layout/spacing";
+import Button from "components/button";
+import Text from "components/text";
 
-export interface ILandingProps {}
+// Interfaces
+interface ILandingProps {}
 
 const Landing = (props: ILandingProps) => {
-  return <Container>:D</Container>;
-};
+  const [theme, setTheme] = useRecoilState(currentTheme);
 
-// Styled
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
+  const changeTheme = () =>
+    setTheme((theme: string) => (theme === "light" ? "dark" : "light"));
+
+  return (
+    <Container>
+      <Text type="h1">Welcome :D</Text>
+      <Text type="h2">The current theme is {theme}</Text>
+      <div style={{ display: "flex" }}>
+        <Button onClick={changeTheme}>Change theme</Button>
+        <Spacing spacing={16} />
+        <Button type="secondary" onClick={changeTheme}>
+          Change theme
+        </Button>
+        <Spacing spacing={16} />
+        <Button type="tertiary" onClick={changeTheme}>
+          Change theme
+        </Button>
+      </div>
+    </Container>
+  );
+};
 
 export default Landing;

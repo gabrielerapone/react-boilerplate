@@ -1,5 +1,8 @@
 import styled, { createGlobalStyle } from "styled-components";
 
+// TODO: Choose a better free font as main
+// TODO: import a backup font from google font API
+
 // Global style
 const GlobalStyle = createGlobalStyle`
 html {
@@ -12,17 +15,18 @@ body {
   font-size: 1rem;
   line-height: 1.625rem;
   margin: auto;
-  background-color: ${({ theme }) => theme.colors.grey10}
+  background: ${({ theme }) => theme.background};
 }
 ::selection {
-  color: ${({ theme }) => theme.colors.primary};
-  background: ${({ theme }) => theme.colors.grey30};;
+  color: ${({ theme }) => theme.color.primary};
+  background-color: ${({ theme }) => theme.color.primary}30;
 }
 ::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
 * {
   box-sizing: border-box;
+  transition: all 250ms ${({theme}) => theme.bezier.ease_out};
 }
 img {
   vertical-align: bottom
@@ -34,36 +38,39 @@ ul {
 li {
   list-style: none;
 }
+
+/* Fonts import */
+@font-face {
+  font-family: 'Pangram-ExtraLight';
+  src: local('Pangram_ExtraLight'), local('PangramExtraLight'),
+  url(assets/fonts/Pangram-ExtraLight.otf) format('otf');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pangram-Light';
+  src: local('Pangram_Light'), local('PangramLight'),
+  url(assets/fonts/Pangram-Light.otf) format('otf');
+  font-weight: 400;
+  font-style: normal;
+}
 @font-face {
   font-family: 'Pangram';
   src: local('Pangram'), local('Pangram'),
-  url(assets/fonts/Pangram.otf) format('ttf');
+  url(assets/fonts/Pangram.otf) format('otf');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Pangram_ExtraLight';
-  src: local('Pangram extralight'), local('PangramExtraLight'),
-  url(assets/fonts/Pangram-ExtraLight.otf) format('ttf');
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Pangram_Medium';
-  src: local('Pangram_Medium'), local('PangramMedium'),
-  url(assets/fonts/Pangram-Medium.otf) format('ttf');
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Pangram_SemiBold';
-  src: local('Pangram semibold'), local('PangramSemiBold'),
-  url(assets/fonts/Pangram-SemiBold.otf) format('ttf');
-  font-weight: 500;
+  font-family: 'Pangram-ExtraBold';
+  src: local('Pangram_ExtraBold'), local('PangramExtraBold'),
+  url(assets/fonts/Pangram-ExtraBold.otf) format('otf');
+  font-weight: 700;
   font-style: normal;
 }
 `;
 
+// Transition between routes
 export const PageTransition = styled.div`
   .fade-appear {
     opacity: 0;
@@ -73,7 +80,7 @@ export const PageTransition = styled.div`
   .fade-appear.fade-appear-active {
     opacity: 1;
     transform: translateY(0) scale(1);
-    transition: all 600ms ${({ theme }) => theme.bezier};
+    transition: all 600ms ${({ theme }) => theme.bezier.ease_out};
   }
 
   .fade-done {
@@ -84,7 +91,7 @@ export const PageTransition = styled.div`
   .fade-done.fade-done-active {
     opacity: 0;
     transform: translateY(-1%) scale(0.975);
-    transition: all 600ms ${({ theme }) => theme.bezier};
+    transition: all 600ms ${({ theme }) => theme.bezier.ease_out};
   }
 
   .fade-enter {
@@ -95,7 +102,7 @@ export const PageTransition = styled.div`
   .fade-enter.fade-enter-active {
     opacity: 1;
     transform: translateY(0) scale(1);
-    transition: all 600ms ${({ theme }) => theme.bezier};
+    transition: all 600ms ${({ theme }) => theme.bezier.ease_out};
   }
 
   .fade-exit {
@@ -106,7 +113,7 @@ export const PageTransition = styled.div`
   .fade-exit.fade-exit-active {
     opacity: 0;
     transform: translateY(-1%) scale(0.975);
-    transition: all 600ms ${({ theme }) => theme.bezier};
+    transition: all 600ms ${({ theme }) => theme.bezier.ease_out};
   }
 `;
 
