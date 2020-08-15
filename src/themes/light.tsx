@@ -52,7 +52,7 @@ export const light: DefaultTheme = {
       color: color.white,
       borderRadius: "12px",
       padding: "8px 24px",
-      boxShadow: "none",
+      boxShadow: `0 6px 21px -4px ${primary}60`,
       border: "none",
     },
     secondary: {

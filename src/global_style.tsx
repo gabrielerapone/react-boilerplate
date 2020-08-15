@@ -1,8 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
 
-// TODO: Choose a better free font as main
-// TODO: import a backup font from google font API
-
 // Global style
 const GlobalStyle = createGlobalStyle`
 html {

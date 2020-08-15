@@ -32,9 +32,10 @@ export default App;
 
 // TODO: Implement tests
 // TODO: Create stories
+// TODO: Import a backup font from google font API
 // TODO: Form
 // TODO: Create favicon for manifest
 // TODO: Super-ellipse?
 // TODO: Asynchronous data querie
 // TODO: Placeholder components
-// TODO: Make interface values from design_tokens objects
+// TODO: Get interface values from design_tokens objects
