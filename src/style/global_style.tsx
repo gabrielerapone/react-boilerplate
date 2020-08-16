@@ -15,8 +15,8 @@ body {
   background: ${({ theme }) => theme.background};
 }
 ::selection {
-  color: ${({ theme }) => theme.color.primary};
-  background-color: ${({ theme }) => theme.color.primary}30;
+  color: ${({ theme }) => theme.color.primary.default};
+  background-color: ${({ theme }) => theme.color.primary.default}30;
 }
 ::-webkit-scrollbar {
   /* display: none; */
