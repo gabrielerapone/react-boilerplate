@@ -2,9 +2,9 @@ import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled from "styled-components";
-import { PageTransition } from "global_style";
+import { PageTransition } from "style/global_style";
 // Pages
-import Landing from "pages/landing";
+import { Landing, Hello } from "pages";
 
 const Routes = ({ location }: { location: any }) => {
   return (
@@ -17,7 +17,8 @@ const Routes = ({ location }: { location: any }) => {
             classNames="fade"
           >
             <Switch location={location}>
-              <Route path="/" component={Landing} />
+              <Route exact path="/" component={Landing} />
+              <Route path="/hello" component={Hello} />
             </Switch>
           </CSSTransition>
         </TransitionGroup>

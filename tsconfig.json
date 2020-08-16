@@ -24,6 +24,6 @@
     "src",
     "types/styled.d.ts",
     "types/fonts.d.ts",
-    "react-app-env.d.ts"
+    "react-app-env.d.ts",
   ]
 }

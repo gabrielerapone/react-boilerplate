@@ -1,8 +1,8 @@
 import "styled-components";
 
 interface IColor {
-  primary: string;
-  secondary: string;
+  primary: any;
+  secondary: any;
   red: string;
   yellow: string;
   green: string;
@@ -32,8 +32,8 @@ interface ITypography {
   fontSize: string;
   lineHeight: string;
   margin: string;
-  textTranform: string,
-  letterSpacing: string,
+  textTranform: string;
+  letterSpacing: string;
 }
 
 type ITextColor = string;
@@ -51,11 +51,15 @@ interface IButton {
     disabled: string;
   };
   fontSize: {
-    default: string,
-    small: string,
-    big: string,
-  },
-  color: string;
+    default: string;
+    small: string;
+    big: string;
+  };
+  color: {
+    default: string;
+    active: string;
+    disabled: string;
+  };
   borderRadius: string;
   padding: string;
   boxShadow: string;

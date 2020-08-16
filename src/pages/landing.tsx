@@ -3,10 +3,7 @@ import { useRecoilState } from "recoil";
 // State
 import { currentTheme } from "state";
 // Components
-import Container from "components/layout/container";
-import Spacing from "components/layout/spacing";
-import Button from "components/button";
-import Text from "components/text";
+import { Container, Spacing, Button, Text } from "components";
 
 // Interfaces
 interface ILandingProps {}
@@ -14,22 +11,34 @@ interface ILandingProps {}
 const Landing = (props: ILandingProps) => {
   const [theme, setTheme] = useRecoilState(currentTheme);
 
-  const changeTheme = () =>
-    setTheme((theme: string) => (theme === "light" ? "dark" : "light"));
+  // const changeTheme = () =>
+  //   setTheme((theme: string) => (theme === "light" ? "dark" : "light"));
+  const lightMode = () => setTheme((theme: string) => (theme = "light"));
+  const darkMode = () => setTheme((theme: string) => (theme = "dark"));
 
   return (
     <Container>
       <Text type="h1">Welcome :D</Text>
-      <Text type="h2">The current theme is {theme}</Text>
+      <Text type="h2">Current theme is {theme}</Text>
+      <Spacing spacing={8} />
       <div style={{ display: "flex" }}>
-        <Button onClick={changeTheme}>Change theme</Button>
-        <Spacing spacing={16} />
-        <Button type="secondary" onClick={changeTheme}>
-          Change theme
+        <Button
+          state={theme === "dark" ? "disabled" : "default"}
+          onClick={darkMode}
+        >
+          Dark mode
         </Button>
         <Spacing spacing={16} />
-        <Button type="tertiary" onClick={changeTheme}>
-          Change theme
+        <Button
+          type="secondary"
+          state={theme === "light" ? "disabled" : "default"}
+          onClick={lightMode}
+        >
+          Light mode
+        </Button>
+        <Spacing spacing={16} />
+        <Button type="tertiary" to="/hello">
+          Try routing
         </Button>
       </div>
     </Container>

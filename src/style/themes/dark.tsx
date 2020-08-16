@@ -1,15 +1,34 @@
 import { DefaultTheme } from "styled-components";
-import { color, gradient, typography, spacing, bezier } from "../design_tokens";
+import {
+  color,
+  gradient,
+  typography,
+  spacing,
+  bezier,
+} from "style/design_tokens";
 
 // Main colors
-const primary: string = color.orange;
-const secondary: string = color.blue;
+const primary = {
+  default: color.orange,
+  disabled: color.orange20,
+};
+const secondary = {
+  default: color.blue,
+  disabled: color.blue20,
+};
 
 // Theme
-export const dark: DefaultTheme = {
+export const Dark: DefaultTheme = {
+  background: color.grey90,
   color: {
-    primary,
-    secondary,
+    primary: {
+      default: primary.default,
+      disabled: primary.disabled,
+    },
+    secondary: {
+      default: secondary.default,
+      disabled: secondary.disabled,
+    },
     red: color.red,
     yellow: color.yellow,
     green: color.green,
@@ -30,7 +49,6 @@ export const dark: DefaultTheme = {
     dark: gradient.dark,
     light: gradient.light,
   },
-  background: color.grey90,
   typography,
   textColor: color.white,
   spacing,
@@ -40,16 +58,20 @@ export const dark: DefaultTheme = {
   button: {
     primary: {
       backgroundColor: {
-        default: primary,
-        active: `${primary}90`,
-        disabled: `${primary}80`,
+        default: primary.default,
+        active: primary.default,
+        disabled: primary.disabled,
       },
       fontSize: {
         default: ".9rem",
         small: ".75rem",
         big: "1rem",
       },
-      color: color.white,
+      color: {
+        default: color.white,
+        active: color.white,
+        disabled: `${color.white}90`,
+      },
       borderRadius: "12px",
       padding: "8px 24px",
       boxShadow: `0 6px 21px -4px ${primary}60`,
@@ -66,7 +88,11 @@ export const dark: DefaultTheme = {
         small: ".75rem",
         big: "1rem",
       },
-      color: primary,
+      color: {
+        default: primary.default,
+        active: primary.default,
+        disabled: primary.disabled,
+      },
       borderRadius: "12px",
       padding: "8px 24px",
       boxShadow: "none",
@@ -75,15 +101,19 @@ export const dark: DefaultTheme = {
     tertiary: {
       backgroundColor: {
         default: "transparent",
-        active: `${primary}90`,
-        disabled: `${primary}80`,
+        active: "transparent",
+        disabled: "transparent",
       },
       fontSize: {
         default: ".9rem",
         small: ".75rem",
         big: "1rem",
       },
-      color: primary,
+      color: {
+        default: primary.default,
+        active: primary.default,
+        disabled: primary.disabled,
+      },
       borderRadius: "12px",
       padding: "8px 24px",
       boxShadow: "none",
@@ -92,4 +122,4 @@ export const dark: DefaultTheme = {
   },
 };
 
-export default dark;
+export default Dark;
