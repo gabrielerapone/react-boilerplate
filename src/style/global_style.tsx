@@ -38,28 +38,28 @@ li {
 
 /* Fonts import */
 @font-face {
-  font-family: 'Pangram-ExtraLight';
+  font-family: 'Pangram';
   src: local('Pangram_ExtraLight'), local('PangramExtraLight'),
   url(assets/fonts/Pangram-ExtraLight.otf) format('otf');
   font-weight: 100;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Pangram-Light';
+  font-family: 'Pangram';
   src: local('Pangram_Light'), local('PangramLight'),
   url(assets/fonts/Pangram-Light.otf) format('otf');
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'Pangram';
   src: local('Pangram'), local('Pangram'),
   url(assets/fonts/Pangram.otf) format('otf');
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Pangram-ExtraBold';
+  font-family: 'Pangram';
   src: local('Pangram_ExtraBold'), local('PangramExtraBold'),
   url(assets/fonts/Pangram-ExtraBold.otf) format('otf');
   font-weight: 700;

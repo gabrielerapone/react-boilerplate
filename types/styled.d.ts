@@ -29,6 +29,7 @@ type IBackground = string;
 
 interface ITypography {
   fontFamily: string;
+  fontWeight: string;
   fontSize: string;
   lineHeight: string;
   margin: string;

@@ -18,7 +18,7 @@ const secondary = {
 };
 
 // Theme
-export const Dark: DefaultTheme = {
+const Dark: DefaultTheme = {
   background: color.grey90,
   color: {
     primary: {

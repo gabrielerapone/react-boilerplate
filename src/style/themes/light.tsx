@@ -18,7 +18,7 @@ const secondary = {
 };
 
 // Theme
-export const Light: DefaultTheme = {
+const Light: DefaultTheme = {
   background: color.grey10,
   color: {
     primary: { default: primary.default, disabled: primary.disabled },
