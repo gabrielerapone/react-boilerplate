@@ -56,6 +56,7 @@ export const Dark: DefaultTheme = {
     ease_out: bezier.ease_out,
   },
   button: {
+    // Button primary
     primary: {
       backgroundColor: {
         default: primary.default,
@@ -77,6 +78,7 @@ export const Dark: DefaultTheme = {
       boxShadow: `0 6px 21px -4px ${primary}60`,
       border: "none",
     },
+    // Button secondary
     secondary: {
       backgroundColor: {
         default: color.white,
@@ -98,6 +100,7 @@ export const Dark: DefaultTheme = {
       boxShadow: "none",
       border: `none`,
     },
+    // Button tertiary
     tertiary: {
       backgroundColor: {
         default: "transparent",
