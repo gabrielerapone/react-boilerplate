@@ -20,7 +20,9 @@ const Landing = (props: ILandingProps) => {
     <Container>
       <Text type="h1">Welcome :D</Text>
       <Text type="h2">Current theme is {theme}</Text>
+      
       <Spacing spacing={8} />
+      
       <div style={{ display: "flex" }}>
         <Button
           state={theme === "dark" ? "disabled" : "default"}
@@ -28,7 +30,9 @@ const Landing = (props: ILandingProps) => {
         >
           Dark mode
         </Button>
+
         <Spacing spacing={16} />
+
         <Button
           type="secondary"
           state={theme === "light" ? "disabled" : "default"}
@@ -36,7 +40,9 @@ const Landing = (props: ILandingProps) => {
         >
           Light mode
         </Button>
+
         <Spacing spacing={16} />
+
         <Button type="tertiary" to="/hello">
           Try routing
         </Button>

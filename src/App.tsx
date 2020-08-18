@@ -12,24 +12,10 @@ import { Light, Dark } from "style/themes";
 import Routes from "routes";
 
 const App = () => {
-  const getCurrentTheme: any = useRecoilValue(currentTheme);
+  // const getCurrentTheme: any = useRecoilState(currentTheme);
+const getCurrentTheme: any = useRecoilValue(currentTheme);
 
-  const theme: any = () => (getCurrentTheme === "light" ? Light : Dark);
-
-  // const getSystemTheme = () => {
-  //   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  //     return "dark";
-  //   } else return "light";
-  // };
-
-  // window
-  //   .matchMedia("(prefers-color-scheme: dark)")
-  //   .addEventListener("change", event => {
-  //     console.log(event);
-  //     event.matches
-  //       ? setTheme((theme: string) => (theme = "dark"))
-  //       : setTheme((theme: string) => (theme = "light"));
-  //   });
+const theme: any = () => (getCurrentTheme === "light" ? Light : Dark);
 
   return (
     <ThemeProvider theme={theme}>
@@ -52,4 +38,3 @@ export default App;
 // TODO: Asynchronous data querie
 // TODO: Placeholder components
 // TODO: Get interface values from design_tokens objects
-// TODO: Theme based on system theme

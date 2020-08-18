@@ -39,7 +39,8 @@ export const gradient = {
 // Golden ratio proportions -> https://www.gridlover.net/try
 export const typography = {
   h1: {
-    fontFamily: "Pangram-ExtraBold",
+    fontFamily: "'Pangram',sans-serif",
+    fontWeight: "700",
     fontSize: "4.25rem",
     lineHeight: "4.875rem",
     margin: "0 0 1.625rem 0",
@@ -47,7 +48,8 @@ export const typography = {
     letterSpacing: ".1rem",
   },
   h2: {
-    fontFamily: "Pangram-ExtraLight",
+    fontFamily: "'Pangram',sans-serif",
+    fontWeight: "100",
     fontSize: "2.625rem",
     lineHeight: "3.25rem",
     margin: "0 0 1.625rem 0",
@@ -55,7 +57,8 @@ export const typography = {
     letterSpacing: ".05rem",
   },
   h3: {
-    fontFamily: "Pangram-ExtraBold",
+    fontFamily: "'Pangram',sans-serif",
+    fontWeight: "700",
     fontSize: "1.625rem",
     lineHeight: "1.625rem",
     margin: "0 0 1.625rem 0",
@@ -63,7 +66,8 @@ export const typography = {
     letterSpacing: ".2rem",
   },
   h4: {
-    fontFamily: "Pangram-ExtraBold",
+    fontFamily: "'Pangram',sans-serif",
+    fontWeight: "700",
     fontSize: "1rem",
     lineHeight: "1.625rem",
     margin: "0 0 1.625rem 0",
@@ -71,7 +75,8 @@ export const typography = {
     letterSpacing: ".1rem",
   },
   h5: {
-    fontFamily: "Pangram-Medium",
+    fontFamily: "'Pangram',sans-serif",
+    fontWeight: "500",
     fontSize: "1rem",
     lineHeight: "1.625rem",
     margin: "0 0 1.625rem 0",
@@ -79,7 +84,8 @@ export const typography = {
     letterSpacing: ".125rem",
   },
   p: {
-    fontFamily: "Pangram-Regular",
+    fontFamily: "'Pangram',sans-serif",
+    fontWeight: "400",
     fontSize: "1rem",
     lineHeight: "1.625rem",
     margin: "0 0 1.625rem 0",
@@ -87,7 +93,8 @@ export const typography = {
     letterSpacing: ".05rem",
   },
   detail: {
-    fontFamily: "Pangram-Light",
+    fontFamily: "'Pangram',sans-serif",
+    fontWeight: "300",
     fontSize: "0.8125rem",
     lineHeight: "1.375rem",
     margin: "0",
@@ -103,7 +110,7 @@ export const bezier = {
 };
 
 // JSON format of the whole style guide
-export const design_tokens = JSON.stringify([
+export const design_tokens_JSON = JSON.stringify([
   color,
   gradient,
   typography,

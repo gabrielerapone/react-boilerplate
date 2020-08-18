@@ -15,13 +15,14 @@ Text.defaultProps = {
 
 // Styled components
 const Div = styled.div<IText>`
-  color: ${({ theme }) => theme.textColor};
   font-family: ${({ theme, type }) => theme.typography[type].fontFamily};
+  font-weight: ${({ theme, type }) => theme.typography[type].fontWeight};
   font-size: ${({ theme, type }) => theme.typography[type].fontSize};
   line-height: ${({ theme, type }) => theme.typography[type].lineHeight};
   margin: ${({ theme, type }) => theme.typography[type].margin};
   text-transform: ${({ theme, type }) => theme.typography[type].textTranform};
-  letter-spacing: ${({theme, type}) => theme.typography[type].letterSpacing};
+  letter-spacing: ${({ theme, type }) => theme.typography[type].letterSpacing};
+  color: ${({ theme }) => theme.textColor};
 `;
 
 export default Text;
