@@ -14,8 +14,7 @@ Spacing.defaultProps = {
 
 // Styled components
 const Div = styled.div<ISpacing>`
-  width: ${({spacing}) => spacing}px;
-  height: ${({ spacing }) => spacing}px;
+  margin: ${({spacing}) => spacing}px;
 `;
 
 export default Spacing;

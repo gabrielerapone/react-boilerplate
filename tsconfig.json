@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,12 +14,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "sourceMap": true,
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "typeRoots": ["node_modules/@types"]
   },
   "include": [
-    "src",
+    "src/**/*",
     "types/styled.d.ts",
     "types/fonts.d.ts",
-    "react-app-env.d.ts",
-  ]
+    "types/react-app-env.d.ts"
+  ],
+  "exclude": [".git", "node_modules"]
 }

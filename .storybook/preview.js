@@ -1,9 +1,9 @@
 import { addDecorator } from "@storybook/react";
 import { withThemesProvider } from "storybook-addon-styled-component-theme";
 // Themes
-import { light } from "themes/light";
-import { dark } from "themes/dark";
+import Light from "../src/style/themes/light";
+import Dark from "../src/style/themes/dark";
 
-const themes = [light, dark];
+const themes = [Light, Dark];
 
 addDecorator(withThemesProvider(themes));

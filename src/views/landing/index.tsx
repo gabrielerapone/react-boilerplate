@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 // State
-import { currentTheme } from "state";
-// Components
-import { Container, Spacing, Button, Text } from "components";
-
+import { currentTheme } from "../../state";
 // Interfaces
-interface ILandingProps {}
+import ILandingProps from './interfaces';
+// Components
+import { Container, Spacing, Button, Text } from "../../components";
+// Queries
+import { getUserById } from "./queries";
 
 const Landing = (props: ILandingProps) => {
   const [theme, setTheme] = useRecoilState(currentTheme);
 
-  // const changeTheme = () =>
-  //   setTheme((theme: string) => (theme === "light" ? "dark" : "light"));
+  useEffect(() => {
+    getUserById(1);
+  });
+
   const lightMode = () => setTheme((theme: string) => (theme = "light"));
   const darkMode = () => setTheme((theme: string) => (theme = "dark"));
 
@@ -20,9 +23,9 @@ const Landing = (props: ILandingProps) => {
     <Container>
       <Text type="h1">Welcome :D</Text>
       <Text type="h2">Current theme is {theme}</Text>
-      
+
       <Spacing spacing={8} />
-      
+
       <div style={{ display: "flex" }}>
         <Button
           state={theme === "dark" ? "disabled" : "default"}

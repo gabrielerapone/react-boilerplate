@@ -2,9 +2,9 @@ import React from "react";
 import { Switch, Route, withRouter } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import styled from "styled-components";
-import { PageTransition } from "style/global_style";
+import { PageTransition } from "./style/global_style";
 // Pages
-import { Landing, Hello } from "pages";
+import { Landing, Hello } from "./views";
 
 const Routes = ({ location }: { location: any }) => {
   return (

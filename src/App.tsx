@@ -3,18 +3,21 @@ import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import "normalize.css";
-import GlobalStyle from "style/global_style";
+import GlobalStyle from "./style/global_style";
 // State
-import { currentTheme } from "state";
+import { currentTheme } from "./state";
 // Themes
-import { Light, Dark } from "style/themes";
+import { Light, Dark } from "./style/themes";
 // Router
-import Routes from "routes";
+import Routes from "./routes";
 
 const App = () => {
-  // const getCurrentTheme: any = useRecoilState(currentTheme);
-const getCurrentTheme: any = useRecoilValue(currentTheme);
 
+
+
+// Get current theme from global state
+const getCurrentTheme: any = useRecoilValue(currentTheme);
+// Returns current theme (string) to pass to ThemeProvider 
 const theme: any = () => (getCurrentTheme === "light" ? Light : Dark);
 
   return (
@@ -29,12 +32,23 @@ const theme: any = () => (getCurrentTheme === "light" ? Light : Dark);
 
 export default App;
 
+// TODO: Document project (comments and README)
+
 // TODO: Implement tests
-// TODO: Create stories
-// TODO: Import a backup font from google font API
-// TODO: Form
-// TODO: Create favicon for manifest
-// TODO: Super-ellipse?
-// TODO: Asynchronous data querie
-// TODO: Placeholder components
+// TODO: Fix storybook
+
 // TODO: Get interface values from design_tokens objects
+
+// TODO: Import a backup font from Google Font API
+// TODO: Redefine text design tokens (current approach is better for themes)
+// TODO: Create favicon for manifest
+
+// TODO: Formik | React Form
+
+// TODO: Asynchronous data queries with Suspense API
+// TODO: React spring animating mount and unmount
+// TODO: Placeholder components with lottie
+
+// TODO: i18n(?)
+
+// TODO: Different layouts for views

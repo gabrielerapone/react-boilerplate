@@ -5,7 +5,7 @@ import {
   typography,
   spacing,
   bezier,
-} from "style/design_tokens";
+} from "../design_tokens";
 
 // Main colors
 const primary = {
@@ -16,6 +16,7 @@ const secondary = {
   default: color.yellow,
   disabled: color.yellow20,
 };
+
 
 // Theme
 const Light: DefaultTheme = {

@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 // Components
-import Button from "components/button";
+import Button from "../components/button";
 
 storiesOf("Button", module)
   .add("Primary", () => <Button>Primary</Button>)
