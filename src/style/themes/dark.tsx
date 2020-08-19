@@ -5,7 +5,7 @@ import {
   typography,
   spacing,
   bezier,
-} from "style/design_tokens";
+} from "../design_tokens";
 
 // Main colors
 const primary = {

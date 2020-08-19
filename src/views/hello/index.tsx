@@ -1,8 +1,8 @@
 import React from "react";
 // Components
-import Container from "components/layout/container";
-import Button from "components/button";
-import Text from "components/text";
+import Container from "../../components/layout/container";
+import Button from "../../components/button";
+import Text from "../../components/text";
 
 // Interfaces
 interface IHelloProps {}
