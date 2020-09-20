@@ -10,6 +10,8 @@ coverage
 .env.development.local
 .env.test.local
 .env.production.local
+.history
+.vscode
 
 # Logs
 npm-debug.log*

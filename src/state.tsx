@@ -6,7 +6,7 @@ export const currentTheme = atom({
   default: "light",
 });
 
-export const user = atom({
-  key: "currentUser",
-  default: null
+export const userID = atom({
+  key: "currentUserID",
+  default: 1,
 })

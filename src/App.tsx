@@ -12,12 +12,9 @@ import { Light, Dark } from "./style/themes";
 import Routes from "./routes";
 
 const App = () => {
-
-
-
 // Get current theme from global state
 const getCurrentTheme: any = useRecoilValue(currentTheme);
-// Returns current theme (string) to pass to ThemeProvider 
+// Returns current theme to pass to ThemeProvider 
 const theme: any = () => (getCurrentTheme === "light" ? Light : Dark);
 
   return (
@@ -36,6 +33,7 @@ export default App;
 
 // TODO: Implement tests
 // TODO: Fix storybook
+// TODO: 404 page
 
 // TODO: Get interface values from design_tokens objects
 
@@ -45,7 +43,6 @@ export default App;
 
 // TODO: Formik | React Form
 
-// TODO: Asynchronous data queries with Suspense API
 // TODO: React spring animating mount and unmount
 // TODO: Placeholder components with lottie
 
