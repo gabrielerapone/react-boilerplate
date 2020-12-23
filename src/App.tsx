@@ -1,4 +1,5 @@
 import React from "react";
+import { hot } from "react-hot-loader/root";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router } from "react-router-dom";
 import { useRecoilValue } from "recoil";
@@ -27,12 +28,12 @@ const theme: any = () => (getCurrentTheme === "light" ? Light : Dark);
   );
 };
 
-export default App;
+export default hot(App);
 
 // TODO: Document project (comments and README)
 
 // TODO: Implement tests
-// TODO: Fix storybook
+// TODO: Fix storybook (currently not compatible with webpack 5)
 // TODO: 404 page
 
 // TODO: Get interface values from design_tokens objects
@@ -44,7 +45,6 @@ export default App;
 // TODO: Formik | React Form
 
 // TODO: React spring animating mount and unmount
-// TODO: Placeholder components with lottie
 
 // TODO: i18n(?)
 

@@ -1,22 +1,24 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
+import styled from 'styled-components';
 import { useRecoilState, useRecoilValue, selector } from "recoil";
 import Lottie from "react-lottie";
-import Loading from "../../assets/lottie-animations/loading.json";
+// Assets
+import { loadingTitle } from "../../assets/lottie-animations/config";
 // State
 import { currentTheme, userID } from "../../state";
-// Interfaces
-import ILandingProps from "./interfaces";
 // Components
 import { Container, Spacing, Button, Text } from "../../components";
 // Queries
 import { getUserById } from "./queries";
+// Interfaces
+interface ILandingProps {}
 
 const Landing = (props: ILandingProps) => {
   const [theme, setTheme] = useRecoilState(currentTheme);
 
   // Theme setters
-  const lightMode = () => setTheme((theme: string) => (theme = "light"));
-  const darkMode = () => setTheme((theme: string) => (theme = "dark"));
+  const changeTheme = (newTheme: string) =>
+    setTheme((theme: string) => (theme = newTheme));
 
   // Get username
   const getUserName = selector({
@@ -32,30 +34,20 @@ const Landing = (props: ILandingProps) => {
     const username = useRecoilValue(getUserName);
     return <Text type="h4">{username}</Text>;
   };
-
-  // Loader - Lottie options
-  const loadingAnimationOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: Loading,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
+ 
   return (
-    <Container>
+    <BG>
       {/* Just a welccome message */}
       <Text type="h1">Welcome :D</Text>
       <Text type="h2">Current theme is {theme}</Text>
 
-      {/* Wait for the query then render random username */}
+      {/* Wait for the query then render a random username */}
       <Suspense
         fallback={
-          <Lottie options={loadingAnimationOptions} height={20} width={80} />
+          <Lottie options={loadingTitle} height={20} width={80} />
         }
       >
-        <Username />
+        {/* <Username /> */}
       </Suspense>
 
       <Spacing spacing={8} />
@@ -64,7 +56,7 @@ const Landing = (props: ILandingProps) => {
       <div style={{ display: "flex" }}>
         <Button
           state={theme === "dark" ? "disabled" : "default"}
-          onClick={darkMode}
+          onClick={() => changeTheme("dark")}
         >
           Dark mode
         </Button>
@@ -74,19 +66,23 @@ const Landing = (props: ILandingProps) => {
         <Button
           type="secondary"
           state={theme === "light" ? "disabled" : "default"}
-          onClick={lightMode}
-        >
-          Light mode
+          onClick={() => changeTheme("light")}
+          >
+            Light mode
         </Button>
 
         <Spacing spacing={16} />
-
         <Button type="tertiary" to="/hello">
           Try routing
         </Button>
       </div>
-    </Container>
+    </BG>
   );
 };
+
+// Styled components
+const BG = styled(Container)`
+  background-color: pink;
+`
 
 export default Landing;
