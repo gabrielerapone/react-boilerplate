@@ -1,11 +1,5 @@
 import { DefaultTheme } from "styled-components";
-import {
-  color,
-  gradient,
-  typography,
-  spacing,
-  bezier,
-} from "../design_tokens";
+import { color, gradient, typography, spacing, bezier } from "../design_tokens";
 
 // Main colors
 const primary = {
@@ -16,7 +10,6 @@ const secondary = {
   default: color.yellow,
   disabled: color.yellow20,
 };
-
 
 // Theme
 const Light: DefaultTheme = {

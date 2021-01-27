@@ -4,7 +4,7 @@ import styled, { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 html {
   font-family: "Pangram", sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   overflow-x: hidden;
   line-height: 26px;
 }
@@ -23,7 +23,7 @@ body {
 }
 * {
   box-sizing: border-box;
-  transition: all 250ms ${({theme}) => theme.bezier.ease_out};
+  transition: all 250ms ${({ theme }) => theme.bezier.ease_out};
 }
 img {
   vertical-align: bottom

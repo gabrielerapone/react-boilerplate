@@ -13,7 +13,7 @@ export interface IButton {
 
 const Button = ({ children, type, state, wide, onClick, to }: IButton) => {
   return (
-    <Div type={type} state={state} wide={wide} onClick={onClick}>
+    <Div type={type} state={state} wide={wide} onClick={onClick} to={to}>
       {to ? (
         <Link to={to} draggable="false">
           {children}
@@ -41,7 +41,7 @@ const Div = styled.div<IButton>`
     theme.button[type].backgroundColor[state]};
   color: ${({ theme, type, state }) => theme.button[type].color[state]};
   border-radius: ${({ theme, type }) => theme.button[type].borderRadius};
-  padding: ${({ theme, type }) => theme.button[type].padding};
+  padding: ${({ theme, type, to }) => (to ? 0 : theme.button[type].padding)};
   box-shadow: ${({ theme, type }) => theme.button[type].boxShadow};
   border: ${({ theme, type }) => theme.button[type].border};
   cursor: ${({ state }) => (state === "disabled" ? "default" : "pointer")};
@@ -55,6 +55,7 @@ const Div = styled.div<IButton>`
     text-decoration: none;
     letter-spacing: 0.05rem;
     user-select: none;
+    padding: ${({ theme, type }) => theme.button[type].padding};
   }
 `;
 
